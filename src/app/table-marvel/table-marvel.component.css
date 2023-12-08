@@ -1,0 +1,124 @@
+@import url('https://fonts.cdnfonts.com/css/montserrat');
+@import "~bootstrap/dist/css/bootstrap.css";
+
+
+.heroi-tabela{
+    margin-top: 10px;
+    border-top: 2px solid #e21a1a;
+    border-bottom: 2px solid #ffffff;
+}
+.heroi-titulo{
+    white-space: nowrap;
+    color: white;
+    padding: 10px 150px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    border-top: 2px solid #ffffff;
+}
+.heroi-info{
+    white-space: nowrap;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    padding-left: 150px;
+}
+
+.scroll{
+    overflow-y: auto;
+    max-height: 70vh;
+}
+
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-top: 1%;
+    width: 100%;
+    overflow-y: hidden;
+    max-height: 50vh;
+    margin-bottom: 2%;
+}
+
+th, td{
+    border: 1px solid #ffffff;
+    padding: 8px;
+}
+
+th {
+    background-color: #640D14;
+    color: white;
+}
+
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+}
+
+.i_personagem{
+    border: 2px solid #FF5858;
+    border-radius: 5px;
+    width: 100%;
+    height: 40px;
+    margin-top: 2%;
+    padding: 0;
+    text-indent: 15px;
+    font-family: 'Motiva Sans', sans-serif;
+}
+
+.i_personagem:focus{
+    outline: 0;
+    border: 2px solid #000000;
+}
+
+.submit{
+    display: flex;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: 0;
+    font-family: 'Motiva Sans', sans-serif;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    margin-top: 1%;
+    font-weight: bold;
+    background-color: #250902;
+    margin-left: auto;
+}
+
+.submit:hover{
+    background-color: #800E13;
+}
+
+.descricao{
+    text-wrap: wrap;
+}
+
+
+.btnDetalhes{
+    display: flex; 
+    margin-left: 25px;
+    border: 2px solid #000000;
+    border-radius: 30px;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.heroi-detalhes {
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: aqua;
+}
+
+.collapse{
+    display: none;
+}
+
+.collapse.show{
+    display: table-row;
+}

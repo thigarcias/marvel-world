@@ -1,0 +1,44 @@
+<div class="form">
+    <div>
+        <input type="text" class="i_personagem" placeholder="Herói" [(ngModel)]="nomeHeroi">
+    </div>
+    <button class="submit" (click)="buscarHeroi(nomeHeroi)">Buscar</button>
+</div>
+
+<div class="scroll">
+    <table>
+        <thead>
+            <tr>
+                <th scope="col" class="heroi-titulo">Última Modificação</th>
+                <th scope="col" class="heroi-titulo">ID</th>
+                <th scope="col" class="heroi-titulo">Nome</th>
+                <th scope="col" class="heroi-titulo">Detalhes</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <ng-container *ngFor="let heroi of dadosMarvel; let i = index">
+                <tr>
+                    <td class="heroi-info">{{heroi.modified}}</td>
+                    <td class="heroi-info">{{heroi.id}}</td>
+                    <td class="heroi-info">{{heroi.name}}</td>
+                    <td class="heroi-info">
+                        <button class="btnDetalhes" type="button" data-toggle="collapse"
+                            [attr.data-target]="'#collapseRow' + i" aria-expanded="false"
+                            [attr.aria-controls]="'collapseRow' + i" (click)="mostrarDetalhes(i)">
+                            +
+                        </button>
+                    </td>
+                </tr>
+
+                <tr class="collapse" id="collapseRow{{i}}">
+                    <td [attr.colspan]="4">
+                        <div>
+                            <p>Detalhes sobre {{heroi.name}}</p>
+                        </div>
+                    </td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+</div>
