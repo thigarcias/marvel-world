@@ -37,3 +37,24 @@
     align-items: center;
     overflow: hidden;
 }
+
+@media only screen and (max-width: 768px) {
+    .header {
+        height: 8vh;
+    }
+
+    #marvelLogo {
+        width: 120px;
+        height: 48px;
+        margin-top: 2%;
+    }
+
+    .container {
+        height: 92vh;
+    }
+
+    .searchBox {
+        width: 95%;
+        height: 85%;
+    }
+}

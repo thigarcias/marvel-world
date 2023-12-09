@@ -33,8 +33,66 @@
 
                 <tr class="collapse" id="collapseRow{{i}}">
                     <td [attr.colspan]="4">
-                        <div>
-                            <p>Detalhes sobre {{heroi.name}}</p>
+                        <div class="heroi-imagem">
+                            <span>Imagem do Heroi</span>
+                            <img src="{{ heroi.thumbnail.path + '/portrait_xlarge.' + heroi.thumbnail.extension}}" alt="">
+                        </div>
+                        <div class="heroi-comics">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Quadrinhos</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let comic of heroi.comics.items">
+                                        <td>{{comic.name}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                        </div>
+                        <div class="heroi-series">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Séries</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let serie of heroi.series.items">
+                                        <td>{{serie.name}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="heroi-stories">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Histórias</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let story of heroi.stories.items">
+                                        <td>{{story.name}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="heroi-events">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Eventos</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let event of heroi.events.items">
+                                        <td>{{event.name}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </td>
                 </tr>
