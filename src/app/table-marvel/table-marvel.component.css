@@ -181,6 +181,26 @@ th {
     display: table-row;
 }
 
+::-webkit-scrollbar {
+    width: 4px;
+    height: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgb(177, 78, 78);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+
+
 @media only screen and (max-width: 768px) {
     .heroi-tabela {
         margin-top: 5px;
@@ -251,4 +271,6 @@ th {
     .collapse {
         display: block;
     }
+
+    
 }
