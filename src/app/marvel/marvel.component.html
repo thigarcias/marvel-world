@@ -1,8 +1,16 @@
 <div class="header">
     <span id="marvelLogo"></span>
+    <span id="marvelLogoText">Heróis</span>
+    <div class="form">
+        <div class="form-search">
+            <input type="text" class="i_personagem" placeholder="Procure um herói" (keydown.enter)="buscarHeroi()" [(ngModel)]="nomeHeroi" >
+            <span class="material-symbols-outlined" id="search" (click)="buscarHeroi()">search</span>
+        </div>
+        <!-- <button class="submit" (click)="buscarHeroi(nomeHeroi)">Buscar</button> -->
+    </div>
 </div>
 <div class="container">
     <div class="searchBox">
-        <app-table-marvel></app-table-marvel>
+        <app-table-marvel *ngIf="loading"></app-table-marvel>
     </div>
 </div>

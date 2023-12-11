@@ -16,169 +16,188 @@
     border-top: 2px solid #ffffff;
 }
 
-.heroi-info {
-    white-space: nowrap;
+.form {
+    display: flex;
+    flex-direction: row;
+    max-width: 90vw;
+    overflow-x: hidden;
+    gap: 60px;
+}
+
+
+.heroi-tudo{
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    min-width: 450px;
+    min-height: 450px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../../assets/civil-war-still.webp);
+    align-items: start;
+    justify-content: end;
+    position: relative;
+}
+
+.heroi-detalhes-animation{
+    display: flex;
+    position: absolute;
+    background-color: #640D14;
+    width: 49.5px;
+    height: 50px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 30px;
+    z-index: 2;
+    margin-left: 89%;
+    justify-content: center;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#herois-fechar{
+    display: flex;
+    position: absolute;
     color: white;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    padding-left: 150px;
+    margin-left: 90%;
+    margin-top: 10px;
+    background-color: #5A3D25;
+    border-radius: 50px;
+    font-size: 21px;
+    cursor: pointer;
+}
+
+#heroi-detalhes-botao{
+    display: flex;
+    color: white;
+    margin-top: 20%;
+}
+
+.heroi-tudo:hover .heroi-detalhes-animation,
+.heroi-tudo:hover #heroi-detalhes-botao {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.heroi-detalhes-animation,
+#heroi-detalhes-botao {
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .heroi-detalhes {
+    display: none;
+    z-index: 2;
+    border-radius: 20px;
+    position: absolute;
     align-items: center;
     width: 100%;
-    height: 100px;
-    background-color: aqua;
-}
-
-.heroi-imagem {
-    display: flex;
-    width: 100px;
+    height: 100%;
+    overflow-y: auto;
     flex-direction: column;
 }
 
-.heroi-imagem span {
+#heroi-detalhes-quadrinhos, #heroi-detalhes-series, #heroi-detalhes-historias, #heroi-detalhes-eventos{
+    display: flex;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    min-height: 10%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    background-color: #250902;
+}
+
+#heroi-detalhes-series, #heroi-detalhes-historias, #heroi-detalhes-eventos{
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+#heroi-detalhes-texto{
+    display: flex;
     color: white;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 14px;
-    text-wrap: nowrap;
-}
-
-.heroi-comics,
-.heroi-series,
-.heroi-events,
-.heroi-stories {
-    display: flex;
+    min-height: 10%;
+    width: 100%;
     align-items: center;
-    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #5A3D25;
+}
+
+.heroi-teste{
+    min-height: 10%;
+    width: 100%;
+    background-color: #5A3D25;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid #221a13;
+    border-bottom: 2px solid #221a13;
+}
+
+.heroi-degrade{
+    display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.822));
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-.heroi-comics th,
-.heroi-series th,
-.heroi-events th,
-.heroi-stories th {
+.heroi-nome, .heroi-id, .heroi-data{
+    display: flex;
+    z-index: 1;
+    font-size: 30px;
+    font-weight: bold;
     color: white;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 20px;
-    text-wrap: nowrap;
-    border: 2px solid #ffffff;
-    width: 90%;
-    background-color: #250902;
-    color: white;
-    text-align: center;
+    font-family: 'Montserrat', sans-serif; 
+    margin-bottom: 1%;
+    position: relative;
+    text-align: left;
+    margin-left: 3%;
 }
 
-.heroi-comics td,
-.heroi-series td,
-.heroi-events td,
-.heroi-stories td {
+.heroi-label-nome, .heroi-label-id, .heroi-label-data{
+    margin-left: 3%;
     color: white;
+    z-index: 1;
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
-    font-size: 14px;
-    text-wrap: nowrap;
-    border: 2px solid #ffffff;
-    width: 90%;
-    background-color: #38040E;
-    color: white;
-    text-align: center;
+    font-size: 12px;
+}
+
+.heroi-label-nome{
+    margin-bottom: -1%;
 }
 
 
+.heroi-id{
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.heroi-data{
+    margin-bottom: 5%;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.show{
+    display: flex;
+}
 
 .scroll {
     overflow-y: auto;
     overflow-x: auto;
     max-height: 70vh;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    margin-top: 1%;
-    width: 100%;
-    overflow-y: hidden;
-    max-height: 50vh;
-    margin-bottom: 2%;
-}
-
-th,
-td {
-    border: 1px solid #ffffff;
-    padding: 8px;
-}
-
-th {
-    background-color: #640D14;
-    color: white;
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-}
-
-.i_personagem {
-    border: 2px solid #FF5858;
-    border-radius: 5px;
-    width: 100%;
-    height: 40px;
-    margin-top: 2%;
-    padding: 0;
-    text-indent: 15px;
-    font-family: 'Motiva Sans', sans-serif;
-}
-
-.i_personagem:focus {
-    outline: 0;
-    border: 2px solid #000000;
-}
-
-.submit {
-    display: flex;
-    width: 100px;
-    height: 30px;
-    border-radius: 5px;
-    border: 0;
-    font-family: 'Motiva Sans', sans-serif;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    color: white;
-    margin-top: 1%;
-    font-weight: bold;
-    background-color: #250902;
-    margin-left: auto;
-}
-
-.submit:hover {
-    background-color: #800E13;
-}
-
-.descricao {
-    text-wrap: wrap;
-}
-
-.btnDetalhes {
-    display: flex;
-    margin-left: 25px;
-    border: 2px solid #000000;
-    border-radius: 30px;
-    background-color: #ffffff;
-    cursor: pointer;
-}
-
-.collapse {
-    display: none;
-}
-
-.collapse.show {
-    display: table-row;
 }
 
 ::-webkit-scrollbar {
@@ -187,11 +206,11 @@ th {
 }
 
 ::-webkit-scrollbar-track {
-    background-color: rgb(177, 78, 78);
+    background-color: #5A3D25;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgb(255, 255, 255);
+    background-color: #250902;
     border-radius: 5px;
 }
 
@@ -262,15 +281,5 @@ th {
         font-size: 12px;
         margin-top: 1%;
     }
-
-    .btnDetalhes {
-        margin-left: 15px;
-        border-radius: 20px;
-    }
-
-    .collapse {
-        display: block;
-    }
-
     
 }

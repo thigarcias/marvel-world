@@ -1,42 +1,136 @@
 @import url('https://fonts.cdnfonts.com/css/motiva-sans');
+@import url('https://fonts.cdnfonts.com/css/cocosharp-trial');
+
 .header{
     display: flex;
     width: 100%;
     height: 10vh;
-    justify-content: center;
     font-family: 'Motiva Sans', sans-serif;
-    background-color: #ED1D24;
+    background-color: #ffffff;
 
+}
+
+#marvelLogoText{
+    font-family: 'CocoSharp Trial', sans-serif;
+    font-weight: bold;
+    color: black;
+    font-size: 30px;
+    margin-top: 2.2%;
+    margin-left: 0.5%;
 }
 
 #marvelLogo{
     display: flex;
-    width: 150px;
+    margin-top: 2%;
+    width: 100px;
     height: 60px;
-    margin-top: 1%;
+    margin-left: 5%;
     background-size: 100%;
-    background-image: url(../../assets/Marvel_Logo.svg.png);
+    background-image: url(../../assets/logoinvertida.png);
     background-repeat: no-repeat;
+}
+
+.form-search{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    margin-top: 8%;
+}
+
+#search{
+    position: absolute;
+    margin-left: 93%;
+    font-size: 22px;
+    cursor: pointer;
+    margin-top: 2%;
+    color: #979797;
 }
 .container{
     display: flex;
     height: 90vh;
-    width: 100%;
-    background-color: #ED1D24;
+    max-width: 100%;
+    background-color: #ffffff;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
+#voltar{
+    position: absolute;
+    margin-right: 95%;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 35px;
+    color: red;
+}
+
+#ir{
+    margin-left: 95%;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 35px;
+    position: absolute;
+    rotate: 180deg;
+    color: red;
+
+}
 .searchBox{
     display: flex;
-    background-color: #640D14;
-    width: 90%;
+    max-width: 90%;
     height: 90%;
     flex-direction: column;
     align-items: center;
     overflow: hidden;
+    justify-content: center;
 }
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    justify-content: center;
+    margin-left: 20%;
+}
+
+.i_personagem {
+    border: 2px solid rgb(219, 219, 219);
+    border-radius: 50px;
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    padding: 0;
+    text-indent: 15px;
+    font-family: 'CocoSharp Trial', sans-serif;
+}
+
+.i_personagem:focus {
+    outline: 0;
+    border: 2px solid #000000;
+}
+
+.submit {
+    display: flex;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: 0;
+    font-family: 'Motiva Sans', sans-serif;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    margin-top: 1%;
+    font-weight: bold;
+    background-color: #250902;
+    margin-left: auto;
+}
+
+.submit:hover {
+    background-color: #800E13;
+}
+
 
 ::-webkit-scrollbar {
     width: 1px;
