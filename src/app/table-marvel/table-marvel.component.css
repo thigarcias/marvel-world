@@ -148,6 +148,8 @@
     align-items: center;
     justify-content: center;
     background-color: #5A3D25;
+    white-space: nowrap;
+    text-align: center;
 }
 
 .heroi-teste{
@@ -248,4 +250,50 @@
     #ir{
         display: none;
     }
+
+    .heroi-tudo{
+        min-width: 300px;
+        min-height: 300px;
+    }
+
+    #heroi-detalhes-quadrinhos, #heroi-detalhes-series, #heroi-detalhes-historias, #heroi-detalhes-eventos{
+        display: flex;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+        min-height: 15%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        background-color: #250902;
+    }
+
+    .heroi-teste{
+        min-height: 20%;
+    }
+    
+    #heroi-detalhes-botao{
+        display: flex;
+        color: white;
+        margin-top: 20%;
+    }
+
+    .heroi-detalhes-animation{
+        display: flex;
+        position: absolute;
+        background-color: #640D14;
+        width: 49.5px;
+        height: 50px;
+        border-bottom-right-radius: 20px;
+        border-top-left-radius: 30px;
+        z-index: 2;
+        margin-left: 83.5%;
+        justify-content: center;
+        opacity: 0;
+        cursor: pointer;
+    }
+
 }

@@ -10,14 +10,6 @@
 
 }
 
-#marvelLogoText{
-    font-family: 'CocoSharp Trial', sans-serif;
-    font-weight: bold;
-    color: black;
-    font-size: 30px;
-    margin-top: 2.2%;
-    margin-left: 0.5%;
-}
 
 #marvelLogo{
     display: flex;
@@ -148,24 +140,21 @@
 
 @media (max-width: 768px) {
     .header {
-        height: 8vh;
-    }
-
-    #marvelLogoText {
-        font-size: 24px;
-        margin-top: 1.5%;
-        margin-left: 0.3%;
+        height: 15vh;
+        flex-direction: column;
+        align-content: center;
     }
 
     #marvelLogo {
         margin-top: 1.5%;
         width: 80px;
         height: 50px;
-        margin-left: 3%;
+        margin-left: 0%;
+        align-self: center;
     }
 
     .form-search {
-        margin-top: 6%;
+        margin-top: 0;
     }
 
     #search {
@@ -189,12 +178,13 @@
     }
 
     .searchBox {
-        max-width: 80%;
+        max-width: 90%;
     }
 
     .form {
         width: 60%;
-        margin-left: 10%;
+        margin-left: 0;
+        align-self: center;
     }
 
     .i_personagem {
