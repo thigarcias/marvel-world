@@ -114,6 +114,7 @@
     width: 100%;
     height: 100%;
     overflow-y: auto;
+    overflow-x: hidden;
     flex-direction: column;
 }
 
@@ -254,6 +255,7 @@
     .heroi-tudo{
         min-width: 300px;
         min-height: 300px;
+        overflow-x: hidden;
     }
 
     #heroi-detalhes-quadrinhos, #heroi-detalhes-series, #heroi-detalhes-historias, #heroi-detalhes-eventos{
@@ -302,6 +304,7 @@
     .heroi-tudo {
         min-width: 250px;
         min-height: 250px;
+        overflow-x: hidden;
     }
 
     #heroi-detalhes-quadrinhos,
@@ -325,4 +328,5 @@
         height: 40px;
         margin-left: 73.5%;
     }
+    
 }

@@ -2,14 +2,13 @@
     <span id="marvelLogo"></span>
     <div class="form">
         <div class="form-search">
-            <input type="text" class="i_personagem" placeholder="Procure um herói (em inglês)" (keydown.enter)="buscarHeroi()" [(ngModel)]="nomeHeroi" >
-            <span class="material-symbols-outlined" id="search" (click)="buscarHeroi()">search</span>
+            <input type="text" class="i_personagem" placeholder="Procure um herói (em inglês)" (keydown.enter)="buscarHeroi.emit(nomeHeroi)" [(ngModel)]="nomeHeroi" >
+            <span class="material-symbols-outlined" id="search" (click)="buscarHeroi.emit(nomeHeroi)">search</span>
         </div>
-        <!-- <button class="submit" (click)="buscarHeroi(nomeHeroi)">Buscar</button> -->
     </div>
 </div>
 <div class="container">
     <div class="searchBox">
-        <app-table-marvel *ngIf="loading"></app-table-marvel>
+        <app-table-marvel></app-table-marvel>
     </div>
 </div>

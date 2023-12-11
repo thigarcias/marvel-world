@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-marvel',
@@ -10,14 +10,10 @@ export class MarvelComponent implements OnInit {
   nomeHeroi: string;
   loading: boolean = false;
 
-  constructor(
-  ) { }
+  @Output() buscarHeroi = new EventEmitter<string>();
+
+  constructor() { }
 
   ngOnInit() {
   }
-
-  buscarHeroi() {
-      this.loading = true;
-  }
 }
-

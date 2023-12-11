@@ -11,50 +11,36 @@ import { MarvelComponent } from '../marvel/marvel.component';
 })
 export class TableMarvelComponent implements OnInit {
 
-  constructor(
-    private marvelService: MarvelService,
-    private marvelComponent: MarvelComponent
-  ) { }
-
-  nomeHeroi: string;
-  ngOnInit() {
-     this.nomeHeroi = this.marvelComponent.nomeHeroi;
-    if (this.nomeHeroi) {
-      this.buscarHeroi(this.nomeHeroi);
-    }
+  constructor(private marvelService: MarvelService, private marvelComponent: MarvelComponent) {
+    marvelComponent.buscarHeroi.subscribe((nomeHeroi: string) => this.buscarHeroi(nomeHeroi));
   }
 
-  public currentPage = 1;
-  public pageSize = 100;
+
+
   dadosMarvel: DadosMarvelHerois[] = []
   marvelPagination: MarvelPagination;
   limit = '';
   page = '1';
   detalheHeroi: DadosMarvelHerois[] = [];
+  nomeHeroi: string;
 
-  keys = Object.keys;
-  key: string = 'Ultima Modificação';
-  reverse: boolean = false;
-  sort(key) {
-    this.key = key;
-    this.reverse = !this.reverse;
+  ngOnInit() {
   }
 
 
   buscarHeroi(nomeHeroi: string) {
+    this.dadosMarvel = [];
     this.marvelService.getCharacters(nomeHeroi)
       .subscribe(
         (next: any) => {
           this.marvelPagination = next
           const dados = JSON.parse(JSON.stringify(this.marvelPagination.data));
           const resultados = dados.results;
-
-          if (resultados && resultados.length > 0) {
-            this.dadosMarvel = resultados;
-            console.log(this.dadosMarvel);
-          } else {
-            console.log('Nenhum resultado encontrado.');
+          if (this.dadosMarvel !== resultados) {
+            console.log('O objeto dadosMarvel foi atualizado.');
           }
+          this.dadosMarvel = resultados;
+          console.log(this.dadosMarvel);
         },
         (error: any) => {
           console.error('Erro na requisição HTTP:', error);
@@ -65,10 +51,10 @@ export class TableMarvelComponent implements OnInit {
   verDetalhesHeroi: boolean = false;
   mostrarDetalhes(i: number) {
     let elemento = document.getElementById('heroiShow' + i);
-    if(elemento.classList.contains('show')){
+    if (elemento.classList.contains('show')) {
       elemento.classList.remove('show');
     }
-    else{
+    else {
       elemento.classList.add('show');
     }
   }
@@ -87,17 +73,12 @@ export class TableMarvelComponent implements OnInit {
     return dataFinal;
   }
 
-  x: number;
-  onMouseDown(event: MouseEvent) {
-    this.x = event.clientX;
-  }
-
-  voltar(){
+  voltar() {
     const carrossel = document.getElementById('carrossel');
     carrossel.scrollLeft -= 500;
     carrossel.style.scrollBehavior = 'smooth';
   }
-  
+
   passar() {
     const carrossel = document.getElementById('carrossel');
     carrossel.scrollLeft += 500;
