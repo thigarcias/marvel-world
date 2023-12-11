@@ -1,5 +1,5 @@
-<span class="material-symbols-outlined" id="voltar" (click)="voltar()">arrow_back_ios</span>
-<span class="material-symbols-outlined" id="ir" (click)="passar()">arrow_back_ios</span>
+<span class="material-symbols-outlined" id="voltar" (click)="voltar()" *ngIf="dadosMarvel.length > 0">arrow_back_ios</span>
+<span class="material-symbols-outlined" id="ir" (click)="passar()" *ngIf="dadosMarvel.length > 0">arrow_back_ios</span>
 <div class="form" id="carrossel">
         <div *ngFor="let heroi of dadosMarvel; let i = index" class="heroi-tudo" 
         [style.backgroundImage]="'url(' + heroi.thumbnail.path + '/portrait_uncanny.' + heroi.thumbnail.extension + ')'">
