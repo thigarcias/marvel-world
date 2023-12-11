@@ -289,3 +289,14 @@
         background-color: #FF5858;
     }
 }
+
+
+@media only screen and (min-width: 1201px) {
+    .header{
+        height: auto;
+    }
+
+    .form-search{
+        margin-top: 4%;
+    }
+}
