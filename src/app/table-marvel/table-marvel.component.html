@@ -1,39 +1,41 @@
-<div class="form" id="carrossel" (mousedown)="onMouseDown($event)" (mousemove)="onMouseMove($event)">
-    <div *ngFor="let heroi of dadosMarvel; let i = index" class="heroi-tudo"
+<span class="material-symbols-outlined" id="voltar" (click)="voltar()">arrow_back_ios</span>
+<span class="material-symbols-outlined" id="ir" (click)="passar()">arrow_back_ios</span>
+<div class="form" id="carrossel">
+        <div *ngFor="let heroi of dadosMarvel; let i = index" class="heroi-tudo" 
         [style.backgroundImage]="'url(' + heroi.thumbnail.path + '/portrait_uncanny.' + heroi.thumbnail.extension + ')'">
-        <div class="heroi-detalhes-animation">
-            <span class="material-symbols-outlined" (click)="mostrarDetalhes(i)" id="heroi-detalhes-botao">add</span>
+            <div class="heroi-detalhes-animation">
+                <span class="material-symbols-outlined" (click)="mostrarDetalhes(i)" id="heroi-detalhes-botao">add</span>
+            </div>
+
+            <span class="heroi-degrade"></span>
+            <span class="heroi-label-nome">Nome</span>
+            <span class="heroi-nome">{{heroi.name}}</span>
+            <span class="heroi-label-id">ID</span>
+            <span class="heroi-id">{{heroi.id}}</span>
+            <span class="heroi-label-data">Última Modificação</span>
+            <span class="heroi-data">{{formatarData(heroi.modified)}}</span>
+
+            <div class="heroi-detalhes" id="heroiShow{{i}}">
+                <span id="heroi-detalhes-quadrinhos">QUADRINHOS</span>
+                <span class="material-symbols-outlined" id="herois-fechar" (click)="mostrarDetalhes(i)" >close</span>
+                <div *ngFor="let comic of heroi.comics.items" class="heroi-teste">
+                    <span id="heroi-detalhes-texto">{{ comic.name }}</span>
+                </div>
+
+                <span id="heroi-detalhes-series">SÉRIES</span>
+                <div *ngFor="let serie of heroi.series.items" class="heroi-teste">
+                    <span id="heroi-detalhes-texto">{{ serie.name }}</span>
+                </div>
+
+                <span id="heroi-detalhes-historias">HISTORIAS</span>
+                <div *ngFor="let story of heroi.stories.items" class="heroi-teste">
+                    <span id="heroi-detalhes-texto">{{ story.name }}</span>
+                </div>
+
+                <span id="heroi-detalhes-eventos">Eventos</span>
+                <div *ngFor="let event of heroi.events.items" class="heroi-teste">
+                    <span id="heroi-detalhes-texto">{{ event.name }}</span>
+                </div>
+            </div>
         </div>
-
-        <span class="heroi-degrade"></span>
-        <span class="heroi-label-nome">Nome</span>
-        <span class="heroi-nome">{{heroi.name}}</span>
-        <span class="heroi-label-id">ID</span>
-        <span class="heroi-id">{{heroi.id}}</span>
-        <span class="heroi-label-data">Última Modificação</span>
-        <span class="heroi-data">{{formatarData(heroi.modified)}}</span>
-
-        <div class="heroi-detalhes" id="heroiShow{{i}}">
-            <span id="heroi-detalhes-quadrinhos">QUADRINHOS</span>
-            <span class="material-symbols-outlined" id="herois-fechar" (click)="mostrarDetalhes(i)">close</span>
-            <div *ngFor="let comic of heroi.comics.items" class="heroi-teste">
-                <span id="heroi-detalhes-texto">{{ comic.name }}</span>
-            </div>
-
-            <span id="heroi-detalhes-series">SÉRIES</span>
-            <div *ngFor="let serie of heroi.series.items" class="heroi-teste">
-                <span id="heroi-detalhes-texto">{{ serie.name }}</span>
-            </div>
-
-            <span id="heroi-detalhes-historias">HISTORIAS</span>
-            <div *ngFor="let story of heroi.stories.items" class="heroi-teste">
-                <span id="heroi-detalhes-texto">{{ story.name }}</span>
-            </div>
-
-            <span id="heroi-detalhes-eventos">Eventos</span>
-            <div *ngFor="let event of heroi.events.items" class="heroi-teste">
-                <span id="heroi-detalhes-texto">{{ event.name }}</span>
-            </div>
-        </div>
-    </div>
 </div>

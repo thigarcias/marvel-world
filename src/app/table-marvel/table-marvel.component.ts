@@ -92,10 +92,15 @@ export class TableMarvelComponent implements OnInit {
     this.x = event.clientX;
   }
 
-  // Função para detectar o evento mousemove
-  onMouseMove(event: MouseEvent) {
+  voltar(){
     const carrossel = document.getElementById('carrossel');
-    carrossel.scrollLeft += (event.clientX - this.x);
+    carrossel.scrollLeft -= 500;
+    carrossel.style.scrollBehavior = 'smooth';
+  }
+  
+  passar() {
+    const carrossel = document.getElementById('carrossel');
+    carrossel.scrollLeft += 500;
     carrossel.style.scrollBehavior = 'smooth';
   }
 

@@ -24,6 +24,27 @@
     gap: 60px;
 }
 
+#voltar{
+    position: absolute;
+    margin-left: -2%;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 35px;
+    margin-top: 10%;
+    color: red;
+}
+
+#ir{
+    margin-left: 90%;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 35px;
+    position: absolute;
+    rotate: 180deg;
+    margin-top: 10%;
+    color: red;
+
+}
 
 .heroi-tudo{
     display: flex;
@@ -194,11 +215,6 @@
     display: flex;
 }
 
-.scroll {
-    overflow-y: auto;
-    overflow-x: auto;
-    max-height: 70vh;
-}
 
 ::-webkit-scrollbar {
     width: 4px;
@@ -221,65 +237,15 @@
 
 
 @media only screen and (max-width: 768px) {
-    .heroi-tabela {
-        margin-top: 5px;
-        border: none;
-    }
-
-    .heroi-titulo,
-    .heroi-info {
-        padding: 5px;
-        font-size: 14px;
-        text-align: center;
-    }
-
-    .heroi-imagem {
-        width: 50px;
-    }
-
-    .heroi-imagem span {
-        font-size: 12px;
-    }
-
-    .heroi-comics th,
-    .heroi-series th,
-    .heroi-events th,
-    .heroi-stories th,
-    .heroi-comics td,
-    .heroi-series td,
-    .heroi-events td,
-    .heroi-stories td {
-        font-size: 12px;
-        padding: 5px;
-    }
-
-    .scroll, table {
-        max-height: 40vh;
-        overflow-x: scroll;
-        table-layout: fixed;
-    }
-
-    th,
-    td {
-        min-width: 100px;
-        word-wrap: break-word;
-        overflow-wrap: anywhere;
-        white-space: nowrap;
-        font-size: 10px;
+    .form{
         overflow-x: auto;
-        text-overflow: clip;
     }
 
-    .i_personagem {
-        height: 30px;
-        margin-top: 1%;
-        font-size: 12px;
-    }
-
-    .submit {
-        height: 25px;
-        font-size: 12px;
-        margin-top: 1%;
+    #voltar{
+        display: none;
     }
     
+    #ir{
+        display: none;
+    }
 }

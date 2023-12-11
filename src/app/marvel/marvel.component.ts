@@ -20,3 +20,4 @@ export class MarvelComponent implements OnInit {
       this.loading = true;
   }
 }
+
