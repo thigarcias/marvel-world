@@ -297,3 +297,38 @@
     }
 
 }
+
+@media only screen and (max-width: 1024px) {
+    .heroi-tudo {
+        min-width: 250px;
+        min-height: 250px;
+    }
+
+    #heroi-detalhes-quadrinhos,
+    #heroi-detalhes-series,
+    #heroi-detalhes-historias,
+    #heroi-detalhes-eventos {
+        font-size: 18px;
+        min-height: 10%;
+    }
+
+    .heroi-teste {
+        min-height: 15%;
+    }
+
+    #heroi-detalhes-botao {
+        margin-top: 15%;
+    }
+
+    .heroi-detalhes-animation {
+        width: 39.5px;
+        height: 40px;
+        margin-left: 73.5%;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .header{
+        height: 12vh;
+    }
+}
